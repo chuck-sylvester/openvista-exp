@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenVistA — Clinical Demo</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div style="display:flex;align-items:center">
+        <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+        <h1>OpenVistA <span>— Clinical</span></h1>
+      </div>
+      <div class="stats">
+        <span class="badge" id="stats-specs">15 packages</span>
+        <span class="badge" id="stats-bugs">0 records</span>
+        <span class="badge">VistA VEHU</span>
+        <button class="mumps-toggle" onclick="toggleMumpsPanel()" id="mumps-toggle-btn">M&gt; MUMPS</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h3>Patients</h3>
+          <input type="text" id="patient-search" placeholder="Search by name..." oninput="filterPatients(this.value)">
+        </div>
+        <div id="patient-list"></div>
+      </div>
+      <div class="main">
+        <div id="no-patient" class="no-select">
+          <div style="font-size:48px;margin-bottom:12px">🏥</div>
+          <div>Select a patient from the sidebar</div>
+          <div id="no-patient-stats" style="font-size:12px;margin-top:8px">Real VistA VEHU data from MUMPS globals via PostgreSQL</div>
+        </div>
+        <div id="patient-view" style="display:none">
+          <div class="tabs">
+            <div class="tab active" data-tab="overview">Overview</div>
+            <div class="tab" data-tab="problems">Problems</div>
+            <div class="tab" data-tab="meds">Meds</div>
+            <div class="tab" data-tab="labs">Labs</div>
+            <div class="tab" data-tab="vitals">Vitals</div>
+            <div class="tab" data-tab="allergies">Allergies</div>
+            <div class="tab" data-tab="notes">Notes</div>
+            <div class="tab" data-tab="orders">Orders</div>
+            <div class="tab" data-tab="schedule">Schedule</div>
+            <div class="tab" data-tab="timeline">Timeline</div>
+            <div class="tab" data-tab="immunizations">Immunizations</div>
+            <div class="tab" data-tab="surgeries">Surgeries</div>
+            <div class="tab" data-tab="radiology">Radiology</div>
+            <div class="tab" data-tab="procedures">Procedures</div>
+          </div>
+          <div class="content">
+            <div id="sec-overview" class="section active"></div>
+            <div id="sec-problems" class="section"></div>
+            <div id="sec-meds" class="section"></div>
+            <div id="sec-labs" class="section"></div>
+            <div id="sec-vitals" class="section"></div>
+            <div id="sec-allergies" class="section"></div>
+            <div id="sec-notes" class="section"></div>
+            <div id="sec-orders" class="section"></div>
+            <div id="sec-schedule" class="section"></div>
+            <div id="sec-timeline" class="section"></div>
+            <div id="sec-immunizations" class="section"></div>
+            <div id="sec-surgeries" class="section"></div>
+            <div id="sec-radiology" class="section"></div>
+            <div id="sec-procedures" class="section"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mumps-panel" id="mumps-panel">
+        <div class="mumps-panel-header">
+          <div><span class="mumps-status" id="mumps-status-dot"></span><span class="title">MUMPS Globals</span></div>
+          <span id="mumps-global-name" style="color:#8b949e;font-size:11px"></span>
+        </div>
+        <div class="mumps-panel-body" id="mumps-panel-body">
+          <div class="mumps-empty">Toggle a tab to see live MUMPS globals</div>
+        </div>
+        <div class="mumps-write-form" id="mumps-write-form" style="display:none">
+          <div style="color:#8b949e;font-size:11px;margin-bottom:6px">SET ^GLOBAL(IEN,NODE)=VALUE</div>
+          <div class="form-row">
+            <input id="mw-ien" placeholder="IEN" style="max-width:70px">
+            <input id="mw-node" placeholder="Node" value="0" style="max-width:60px">
+            <input id="mw-piece" placeholder="Piece#" style="max-width:60px">
+            <input id="mw-value" placeholder="Value" style="flex:2">
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span id="mumps-write-status" style="color:#8b949e;font-size:11px"></span>
+            <button class="mumps-write-btn" onclick="mumpsWrite()">SET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+      <div class="modal" id="modal-content"></div>
+    </div>
+
+
+</body>
+</html>

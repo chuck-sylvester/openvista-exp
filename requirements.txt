@@ -1,0 +1,17 @@
+# ───────────────────────────────────────────────────────────
+# requirements.txt
+# ───────────────────────────────────────────────────────────
+
+# ──── Original App Dependencies ────────────────────────────
+# flask>=3.0
+# sqlalchemy>=2.0
+# psycopg2-binary>=2.9
+# gunicorn>=22.0
+
+# ──── openvista-explorer Dependencies ──────────────────────
+fastapi==0.123.9
+uvicorn[standard]==0.38.0
+Jinja2==3.1.6
+pydantic-settings>=2.0
+SQLAlchemy==2.0.36
+psycopg2-binary==2.9.11

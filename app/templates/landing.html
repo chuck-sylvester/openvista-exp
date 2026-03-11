@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenVistA — Legacy Healthcare, Modernized</title>
+  <link rel="stylesheet" href="/static/css/landing.css">
+  <link rel="icon" href="/static/img/favicon-msu.ico">
+</head>
+<body>
+  <main class="container">
+    <section class="hero animate-in">
+      <h1 class="animate-in delay-1">OpenVistA</h1>
+      <p class="tagline animate-in delay-2">Legacy healthcare systems can be modernized. This is proof.</p>
+    </section>
+
+    <section class="section animate-in delay-2">
+      <div class="section-title">Context</div>
+      <h2>What is VistA?</h2>
+      <p>VistA (Veterans Health Information Systems and Technology Architecture) is the electronic health record system of the United States Department of Veterans Affairs. Designed in the late 1970s, with a major enterprise release in 1986, it runs on MUMPS—a language and database that predates the relational model. The VA's VistA codebase spans approximately 3.7 million lines of MUMPS and serves over 9 million veterans annually.</p>
+    </section>
+
+    <section class="section animate-in delay-3">
+      <div class="section-title">Demo Scope</div>
+      <h2>What this demo shows</h2>
+      <p>Live data extracted from VistA VEHU—the official VA training database. 193,900 real records across 22 clinical tables, pulled directly from MUMPS globals. Fifteen clinical packages:</p>
+      <div class="packages animate-in delay-4">
+        <span class="package-item">Patient Registration</span>
+        <span class="package-item">Problem List</span>
+        <span class="package-item">Vitals</span>
+        <span class="package-item">Allergy</span>
+        <span class="package-item">Pharmacy</span>
+        <span class="package-item">Lab</span>
+        <span class="package-item">Orders</span>
+        <span class="package-item">Consults</span>
+        <span class="package-item">Mental Health</span>
+        <span class="package-item">Radiology</span>
+        <span class="package-item">Inpatient Meds</span>
+        <span class="package-item">PCE</span>
+        <span class="package-item">TIU Notes</span>
+        <span class="package-item">Health Summary</span>
+        <span class="package-item">Scheduling</span>
+      </div>
+    </section>
+
+    <section class="section animate-in delay-5">
+      <div class="section-title">Data Provenance</div>
+      <h2>Direct extraction</h2>
+      <p>This data was extracted directly from MUMPS globals—<span class="mono">^DPT</span>, <span class="mono">^PSRX</span>, <span class="mono">^GMR</span>, and others. Not mock data. Not FHIR conversion. Direct MUMPS extraction.</p>
+      <div class="stats animate-in delay-6">
+        <span class="stat">193,900 records</span>
+        <span class="stat">VEHU database</span>
+        <span class="stat">15 packages</span>
+      </div>
+    </section>
+
+    <div class="cta-wrap animate-in delay-7">
+      <a href="/app" class="cta-button">Enter Demo</a>
+    </div>
+
+    <footer class="animate-in delay-8">
+      <p>openvista.cc — VistA data, modern interface</p>
+    </footer>
+  </main>
+</body>
+</html>
